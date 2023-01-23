@@ -1,5 +1,5 @@
 /***************************************************************************//**
- * @file                    main.c
+ * @file f                    main.c
  * @author                  Neethan Shivakumar
  * @date                    07-01-2023
  * @matriculation number    5367019
