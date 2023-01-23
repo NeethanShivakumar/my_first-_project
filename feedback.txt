@@ -1,0 +1,18 @@
+// Name: Neethan Shivakumar
+//Matriculation no.: 5367019
+
+Task 1:
+A.	 
+In exercise Sheet 5 I could not implement the task 1.C i.e to play melody 1 for one knock and melody 2 for two knocks. So, I spent some time to implement that task.
+Because, Exercise sheet 6 has its continuity. 
+
+The challenge was only to understand how the relay can be used to switch between two functionalities of piezo element in the code.
+
+Please open the Hterm to see how many times you are knocking.  
+
+B.
+	 
+For this it was all theory questions. So, I have tried to explain everything in detail in another text file (Task-1b)  attached.
+
+
+   

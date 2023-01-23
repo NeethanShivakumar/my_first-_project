@@ -1,0 +1,35 @@
+// Name: Neethan Shivakumar
+//Matriculation no.: 5367019
+
+
+•	Two advantages compared to the readout structure of Exercise Sheet 5.
+
+1.	Sensitivity can be adjusted using 10k pot (P1). By using 10k pot vibrations can be detected more efficiently 
+2.	In exercise 5, piezo is not connected to another pin, instead P3IN is used for readout. So the readout can be implemented using only polling. 
+    (port 3 doesn’t have interrupt capability). In the exercise 6 we are using interrupt mechanism to detect the vibration (knock). The main advantage 
+    of this is- the performance of microcontroller is far better in Interrupt method than Polling Method.
+3.	In polling method, the microcontroller is checking continuously whether the knock is detected or not, but the chances of data loss are greater in Polling than Interrupt.
+
+•	The signal flow originating from the buzzer through the relais, the analog front-end, the microcontroller and back.
+
+    BUZZER is connected to the single pole of the relay. i.e. to the pin on CON4 which can be routed either to the right or to the left output of the relay. 
+    Pin P1.4 is made as output and connected to REL_STAT. ( P1.4 is used to rout either to the right or to the left output of the relay).
+
+    Initially  P1.4 is made zero, to connect the buzzer to the analog front-end (this is done to detect the knock).  
+    When the knock is detected, the voltage is generated and transmitted from buzzer (X1) to DAC_IN (X2). The generated voltage is givan as input to the positive pin of OP-Amps.
+    The output of OP-Amp(COMP_OUT) is connected to P1.3 (which have the interrupt capability). Once there is a Low to High Edge at P1.3 it goes to interrupt Subroutine and
+    number of knocks are saved in Knock_flag variable.
+    
+    If a knock is detected P1.4 is made one, to connect the buzzer to the PWM capable output pin of the microcontroller. P3.6 is now made as output pin and melody 1
+     is played if only one knock is detected. Melody 2 is played if 2 knocks are detected. if more than 2 knocks are detected nothing plays.
+    
+    After melody is played once, it is stopped by making P3.6 as input and virtually connecting it to ground to remove all the accumulated charges,
+     P1.4 is made zero (cleared) to detect the knock again. and the routine continuous 
+    
+    
+•	Significant components and their main functionality.
+
+     Buzzer: It is used as vibrational sensor to detect the knock and it is used to play the melody.
+     Potentiometer (10k pot) : Sensitivity can be adjusted using 10k pot (P1). By using 10k pot vibrations can be detected more efficiently. 
+     Relay: It is used to switch between the functionality of piezo element. 
+    
